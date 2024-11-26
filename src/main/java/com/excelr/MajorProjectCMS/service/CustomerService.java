@@ -26,4 +26,9 @@ public class CustomerService {
 	public Customer getCustomer(int cno) {
 		return customerRepo.findById(cno).get();
 	}
+
+	public void deleteCustomer(int cno) {
+		customerRepo.deleteById(cno);
+		
+	}
 }
