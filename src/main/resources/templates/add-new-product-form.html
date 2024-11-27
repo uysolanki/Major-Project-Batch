@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Product List</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		<!-- Brand -->
+		<a class="navbar-brand" href="#">List Of Products</a>
+
+		<!-- Toggler/collapsibe Button -->
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		
+	</nav>
+	<br>
+	<br>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+				<h1 class="text-center"> Create New Product</h1>
+				<div class="card-body">
+					<form th:action="@{/addProduct}" th:object="${product}" method="POST">
+						<div class="form-group">
+							<label> Product Name </label>
+							<input type="text" name="producttname" th:field="*{producttname}" class="form-control"
+								placeholder="Enter Product Name" />
+						</div>
+
+						<div class="form-group">
+							<label> Product Category </label>
+							<input type="text" name="productcategory" th:field="*{productcategory}" class="form-control"
+								placeholder="Enter product category" />
+						</div>
+
+						<div class="form-group">
+							<label> Product Color </label>
+							<input type="text" name="productcolor" th:field="*{productcolor}" class="form-control"
+								placeholder="Enter product color" />
+						</div>
+						
+						<div class="form-group">
+							<label> Product Price </label>
+							<input type="text" name="productprice" th:field="*{productprice}" class="form-control"
+								placeholder="Enter product price" />
+						</div>
+												
+
+						<div class="box-footer">
+							<button type="submit" class="btn btn-primary">
+								Add Product
+							</button>
+						</div>
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
