@@ -56,19 +56,19 @@ public class CustomerController {
 	}
 	
 	//Delete Http Method used to delete Customer
-	@DeleteMapping("/deleteCustomer/{id}")
+	@RequestMapping("/deleteCustomer/{id}")
 	public String deleteCustomer(@PathVariable("id") int cno)
 	{
 		customerService.deleteCustomer(cno);
-		return "Customer Record Deleted";
+		return "redirect:/customerHome";
 	}
 	
 	
-	@PutMapping("/updateCustomer/{id}")
-	public String updateCustomer(@PathVariable("id") int cno,@RequestBody Customer newValues)
+	@PostMapping("/updateCustomer/{id}")
+	public String updateCustomer(@PathVariable("id") int cno,@ModelAttribute Customer newValues)
 	{
 		customerService.updateCustomer(cno,newValues);
-		return "Customer Record Updated";
+		return "redirect:/customerHome";
 	}
 	
 	@RequestMapping("/newCustomer")
@@ -79,4 +79,11 @@ public class CustomerController {
 		return "add-new-customer-form";
 	}
 
+	@RequestMapping("/updatecustomerform/{id}")
+	public String updateCustomerForm(@PathVariable("id") int cno,Model model)
+	{
+		Customer c1=customerService.getCustomer(cno);
+		model.addAttribute("customer",c1);
+		return "update-customer-form";
+	}
 }

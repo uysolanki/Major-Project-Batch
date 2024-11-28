@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Customer Management System</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+	
+	
+</head>
+<body>
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		<!-- Brand -->
+		<a class="navbar-brand" href="#">Customer Management System</a>
+
+		<!-- Toggler/collapsibe Button -->
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+	</nav>
+
+	<div class="container">
+		<div class="row">
+				<a th:href="@{/customerHome}" class="btn btn-primary btn-lg mb-3 mr-3">Customer List</a>
+				<a th:href="@{/productHome}" class="btn btn-primary btn-lg mb-3">Product List</a>
+		</div>
+		<img src="amazonhomepage.jpg" height="600" width="900">
+
+	</div>
+</body>
+</html>

@@ -49,19 +49,19 @@ public class ProductController {
 			return "redirect:/productHome";
 		}
 		
-		@DeleteMapping("/deleteProduct/{id}")
+		@RequestMapping("/deleteProduct/{id}")
 		public String deleteProduct(@PathVariable("id") int pno)
 		{
 			productService.deleteProduct(pno);
-			return "Product Record Deleted";
+			return "redirect:/productHome";
 		}
 		
 		
-		@PutMapping("/updateProduct/{id}")
-		public String updateProduct(@PathVariable("id") int pno,@RequestBody Product newValues)
+		@PostMapping("/updateProduct/{id}")
+		public String updateProduct(@PathVariable("id") int pno,@ModelAttribute Product newValues)
 		{
 			productService.updateProduct(pno,newValues);
-			return "Product Record Updated";
+			return "redirect:/productHome";
 		}
 		
 		@RequestMapping("/newProduct")
@@ -70,5 +70,13 @@ public class ProductController {
 			Product p1=new Product();
 			model.addAttribute("product",p1);
 			return "add-new-product-form";
+		}
+		
+		@RequestMapping("/updateproductform/{id}")
+		public String updateCustomerForm(@PathVariable("id") int pno,Model model)
+		{
+			Product p1=productService.getProduct(pno);
+			model.addAttribute("product",p1);
+			return "update-product-form";
 		}
 }
