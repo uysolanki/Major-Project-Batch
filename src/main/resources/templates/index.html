@@ -7,7 +7,23 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
-	
+	<style>
+		.my-cms-button{
+			background-color: red;
+			color:white;
+			margin:10px;
+			padding:10px;
+			border-radius: 5px;
+			font-family: Arial, Helvetica, sans-serif;
+			font-weight: bold;
+		}
+		
+		.my-cms-button:hover{
+			color:white;
+			text-decoration: none;
+			background-color: rgb(151, 27, 4);
+			}
+	</style>
 	
 </head>
 <body>
@@ -25,8 +41,8 @@
 
 	<div class="container">
 		<div class="row">
-				<a th:href="@{/customerHome}" class="btn btn-primary btn-lg mb-3 mr-3">Customer List</a>
-				<a th:href="@{/productHome}" class="btn btn-primary btn-lg mb-3">Product List</a>
+				<a th:href="@{/customerHome}" class="my-cms-button">Customer List</a>
+				<a th:href="@{/productHome}" class="my-cms-button">Product List</a>
 		</div>
 		<img src="amazonhomepage.jpg" height="600" width="900">
 
